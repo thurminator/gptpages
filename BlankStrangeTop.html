@@ -1,0 +1,252 @@
+<html>
+<head>
+<title>Sample Page</title>
+
+</head>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script type='text/javascript' src='http://f35.elitedaily.com:8080/wp-content/themes/strangelove/js/parseUri.js?ver=9.7.1'></script>
+    <script type='text/javascript' src='http://f35.elitedaily.com:8080/wp-content/themes/strangelove/js/strangelove.min.js?ver=9.7.1'></script>
+        <script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
+</script>
+<script src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+
+<script>ad_kvs = {};
+referrer = parseUri(document.referrer);
+ad_kvs['environment'] = 'vthree';
+ad_kvs['article'] = '0';
+ad_kvs['page'] = 'home';
+ad_kvs['tags'] = 'none';
+ad_kvs['area'] = 'home';
+ad_kvs['targeting'] = (referrer.host) ? referrer.host : 'none';
+ad_kvs['sta'] = (navigator.cookieEnabled) ? 'true' : 'false';
+googletag.cmd.push(function() {
+googletag.pubads().setTargeting("environment", ad_kvs['environment']);
+googletag.pubads().setTargeting("article", ad_kvs['article']);
+googletag.pubads().setTargeting("page", ad_kvs['page']);
+googletag.pubads().setTargeting("tags", ad_kvs['tags']);
+googletag.pubads().setTargeting("area", ad_kvs['area']);
+googletag.pubads().setTargeting("targeting", ad_kvs['targeting']);
+googletag.pubads().setTargeting("sta", ad_kvs['sta']);
+googletag.pubads().setTargeting('example', ['debug','dfp']);
+googletag.enableServices();
+});
+</script><script type="text/javascript">
+googletag.cmd.push(function() {
+googletag.defineSlot('/5765/elitedaily.us/ed_edhome_homehp/billboard', [[728, 90], [970, 90], [970, 250]], 'dfp_dynamic_billboard').addService(googletag.pubads()).setTargeting("pos", ["billboard"]);
+//googletag.defineOutOfPageSlot('/5765/elitedaily.us/ed_edhome_homehp/billboard', 'dfp_out_of_page').addService(googletag.pubads());
+//googletag.defineSlot('/5765/elitedaily.us/ed_edhome_homehp/dmpu', [[300, 250], [300, 600], [300, 1050]], 'dfp_dynamic_rectangle').addService(googletag.pubads()).setTargeting("pos", ["dmpu"]);
+//googletag.defineSlot('/5765/elitedaily.us/ed_edhome_homehp/leaderboard', [728, 90], 'dfp_repeating_leaderboard').addService(googletag.pubads()).setTargeting("pos", ["leaderboard"]);
+//googletag.defineSlot('/5765/elitedaily.us/ed_edhome_homehp/mpu_sticky', [300, 250], 'dfp_sticky_rectangle').addService(googletag.pubads()).setTargeting("pos", ["mpu_sticky"]);
+//googletag.defineSlot('/5765/elitedaily.us/ed_edhome_homehp/promo', [1, 1], 'dfp_hp_promo_unit').addService(googletag.pubads()).setTargeting("pos", ["promo"]);
+});
+/*var site_dfp_ads = {
+    desktop_safe: function(the_ad, lazyad) {
+        if ($(window).width() > 1024) {
+            // console.log('desktop: ' + the_ad);
+            googletag.cmd.push(function() {
+                if (lazyad != undefined) {
+                    googletag.defineSlot('/5765/elitedaily.us/ed_ed' + ad_kvs.area + '_' + ad_kvs.area + 'art/mpu_promo', [
+                        [300, 250],
+                        [350, 270]
+                    ], the_ad).addService(googletag.pubads()).setTargeting("pos", ["mpu_promo"]);
+                }
+                googletag.display(the_ad);
+            });
+        }
+    },
+    tablet_safe: function(the_ad) {
+        if ($(window).width() <= 1024 && $(window).width() >= 768) {
+            // console.log('tablet: ' + the_ad);
+            googletag.cmd.push(function() {
+                googletag.display(the_ad);
+            });
+        }
+    },
+    mobile_safe: function(the_ad, lazyad) {
+        if ($(window).width() < 768) {
+            // console.log('mobile: ' + the_ad);            
+            googletag.cmd.push(function() {
+                if (lazyad != undefined) {
+                    googletag.defineSlot('/5765/elitedaily.mob/ed_ed' + ad_kvs.area + '_mob' + ad_kvs.area + 'art/mpu_bot', [300, 250], 'dfp_rectangle_bottom').addService(googletag.pubads()).setTargeting("pos", ["mpu_bot"]);
+                }
+                googletag.display(the_ad);
+            });
+        }
+    },
+    repeating_feed_ad: function(pg_count) {
+        if ($('body').hasClass('video') && $('body').hasClass('page')) return;
+
+        var slotName = 'dfp_repeating_leaderboard-' + pg_count;
+        googletag.cmd.push(function() {
+            var slot = googletag.defineSlot('/5765/elitedaily.us/ed_edhome_homehp/leaderboard', [728, 90], slotName).addService(googletag.pubads()).setTargeting("pos", ["leaderboard"]);
+            googletag.display(slotName);
+            site_dfp_ads.dfp_key_values();
+            googletag.pubads().refresh([slot]);
+            // console.log(slotName);           
+        });
+    },
+    repeating_ad_article: function(pg_count) {
+        var slotName = 'dfp_repeating_leaderboard-' + pg_count;
+        googletag.cmd.push(function() {
+            var slot = googletag.defineSlot('/5765/elitedaily.us/ed_ed' + ad_kvs.area + '_' + ad_kvs.area + 'art/leaderboard', [728, 90], slotName).addService(googletag.pubads()).setTargeting("pos", ["leaderboard"]);
+            googletag.display(slotName);
+            site_dfp_ads.dfp_key_values();
+            googletag.pubads().refresh([slot]);
+            // console.log(slotName);           
+        });
+    },
+    dfp_key_values: function() {
+        for (var key in ad_kvs) {
+            //console.log(key + ', ' + ad_kvs[key]);
+            googletag.pubads().setTargeting(key, ad_kvs[key]);
+        }
+    },
+    mpu_promo_unit: function() {
+        // Show Native Ad or Triple Lift Unit
+        var lazy_sponsor_id = 'dfp_mpu_promo_unit';
+        $('.related-content-wrapper .one-third-column-inner-wrap').append('<div id="' + lazy_sponsor_id + '" class="bottom-one-third-article related-card sponsor-related-card" data-adid="' + lazy_sponsor_id + '"></div>');
+        site_dfp_ads.desktop_safe(lazy_sponsor_id, 'lazy');
+
+    },
+    mobile_rectangle_bottom: function() {
+        var lazy_mobile_bottom_id = 'dfp_rectangle_bottom';
+        $('.related-content-wrapper .content-area').append('<div class="columns"><div id="' + lazy_mobile_bottom_id + '" class="ad-mobile-rectangle-wrapper sponsor-related-card related-card" data-adid="' + lazy_mobile_bottom_id + '"></div></div>');
+        site_dfp_ads.mobile_safe(lazy_mobile_bottom_id, 'lazy');
+
+    },
+    repeating_ad_article_setup: function() {
+        // 728x90 Leaderboard Ad Unit
+        var repeating_leaderboard_id = 'dfp_repeating_leaderboard-' + article_repeating_count;
+        var leaderboard_ad_data = {
+            leaderboard_id: repeating_leaderboard_id
+        };
+
+        $('.related-content-wrapper').append(tpl['related-leaderboard-ad'](leaderboard_ad_data));
+        site_dfp_ads.repeating_ad_article(article_repeating_count);
+        article_repeating_count++;
+
+    },
+    load_article_infinite_ad: function(pg) {
+        var repeating_leaderboard_id = 'dfp_repeating_leaderboard-' + article_repeating_count;
+        var leaderboard_ad_data = {
+            leaderboard_id: repeating_leaderboard_id
+        };
+
+        $('#latestinfinite-' + pg).append(tpl['related-leaderboard-ad'](leaderboard_ad_data));
+        site_dfp_ads.repeating_ad_article(article_repeating_count);
+        article_repeating_count++;
+
+    },
+
+    load_related_ads: function() {
+
+        // Show Desktop Ad
+        if (sl_window_width > 1024) {
+
+            site_dfp_ads.mpu_promo_unit();
+            site_dfp_ads.repeating_ad_article_setup();
+        }
+
+        // Show Tablet Ad (Sponsored Post)
+        if (sl_window_width <= 1024 && sl_window_width >= 768) {
+            // var tablet_btf_id = $('.below').data('tabletadid');
+            // //console.log('tablet ' + tablet_btf_id);
+            // var tablet_btf_id = parseInt(tablet_btf_id);
+            // $('.related-content-wrapper .one-third-column-inner-wrap').append('<div id="' + tablet_btf_id + '" class="bottom-one-third-article related-card sponsor-related-card" data-adid="' + tablet_btf_id + '"></div>');
+            // ADTECH.config.placements[tablet_btf_id] = { sizeid: 16, params: { alias: '', target: '_blank', allowedSizes: '300x250,350x270'}};
+            // site_ads.asyncTabletSafe(tablet_btf_id);
+        }
+
+        // Show Mobile BTF B Ad (300x250 Ad at bottom of related)
+        if (sl_window_width < 768) {
+            site_dfp_ads.mobile_rectangle_bottom();
+        }
+
+
+    },
+
+    set_referrer: function() {
+        var referrer = parseUri(document.referrer);
+        if (referrer.host != undefined || referrer.host != '') {
+            googletag.pubads().setTargeting('targeting', referrer.host);
+        }
+    },
+
+    load_native_intext_ad: function(pid, clickLink, brandName, postTitle, postImage) {
+        var the_post = {};
+        the_post['click-thru'] = clickLink;
+        the_post['sponsor-name'] = brandName;
+        the_post['title'] = postTitle;
+        the_post['featured_image'] = {};
+        the_post['featured_image']['wide-full'] = {};
+        the_post['featured_image']['wide-full']['url'] = postImage;
+        the_post['post-class'] = ' in-text-ad row';
+        $('.entry-content p:nth-child(4)').after(tpl['native-adhesion'](the_post));
+        $('.in-text-ad h2').dotdotdot();
+    }
+};*/
+</script>
+<div id="dfp_adhesion" class="ad-mobile-leaderboard-wrapper row"></div>
+        <div id="dfp_tablet_leaderboard_top" class="ad-tablet-leaderboard-wrapper"></div>
+
+        
+
+    <!-- Billboard or 728 Ad ATF -->
+    <div class="row ad-single-top show-for-large-up">
+        <div class="column">
+            <div class="ad-unit-leaderboard">
+                <div class="billboard-unit">
+                                            <div id="dfp_dynamic_billboard"> </div>
+                                    </div>                  
+            </div>                  
+        </div>
+    </div>
+    <div id="dfp_hp_promo_unit" style="display: none !important; height: 0;"></div>
+    <div id="dfp_rectangle_top" class="row"></div>
+    <div id="dfp_dynamic_rectangle"></div>
+    <div id="dfp_sticky_rectangle"></div>
+
+        <script type="text/javascript">
+window.getAds = function(){
+desktop_ads = [];
+tablet_ads = [];
+mobile_ads = [];
+site_dfp_ads.desktop_safe('dfp_dynamic_billboard');
+//desktop_ads.push('dfp_dynamic_billboard');
+/*site_dfp_ads.desktop_safe('dfp_out_of_page');
+desktop_ads.push('dfp_out_of_page');
+site_dfp_ads.desktop_safe('dfp_dynamic_rectangle');
+desktop_ads.push('dfp_dynamic_rectangle');
+site_dfp_ads.desktop_safe('dfp_repeating_leaderboard');
+desktop_ads.push('dfp_repeating_leaderboard');
+site_dfp_ads.desktop_safe('dfp_sticky_rectangle');
+desktop_ads.push('dfp_sticky_rectangle');
+site_dfp_ads.desktop_safe('dfp_hp_promo_unit');
+desktop_ads.push('dfp_hp_promo_unit');
+site_dfp_ads.tablet_safe('dfp_tablet_leaderboard_top');
+tablet_ads.push('dfp_tablet_leaderboard_top');
+site_dfp_ads.tablet_safe('dfp_tablet_leaderboard_bot');
+tablet_ads.push('dfp_tablet_leaderboard_bot');
+site_dfp_ads.tablet_safe('dfp_hp_promo_unit');
+tablet_ads.push('dfp_hp_promo_unit');
+site_dfp_ads.mobile_safe('dfp_adhesion');
+mobile_ads.push('dfp_adhesion');
+site_dfp_ads.mobile_safe('dfp_oop_adhesion');
+mobile_ads.push('dfp_oop_adhesion');
+site_dfp_ads.mobile_safe('dfp_rectangle_top');
+mobile_ads.push('dfp_rectangle_top');
+site_dfp_ads.mobile_safe('dfp_rectangle_bottom');
+mobile_ads.push('dfp_rectangle_bottom');
+site_dfp_ads.mobile_safe('dfp_hp_promo_unit');
+mobile_ads.push('dfp_hp_promo_unit');*/
+};
+googletag.pubads().setTargeting('interests', ['sports','football']);
+getAds();
+</script>
+</body>
+</html>
