@@ -1,10 +1,10 @@
 {
-  'Tealium_iFrame': {
-    'triggers': {
-      'pageLoad': {
-        'on': 'visible',
-        'request': 'iframeMessage',
-      },
-    },
-  }
+	"Tealium_iFrame": {
+		"triggers": {
+			"pageLoad": {
+				"on": "visible",
+				"request": "iframeMessage"
+			}
+		}
+	}
 }
